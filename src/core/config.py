@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     DB_HOST: str = os.getenv("DB_HOST")
     DB_PORT: int = os.getenv("DB_PORT")
     DB_NAME: str = os.getenv("DB_NAME")
+    SECRET_KEY: str = os.getenv("SECRET_KEY")
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
