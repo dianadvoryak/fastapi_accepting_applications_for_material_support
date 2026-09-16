@@ -1,26 +1,12 @@
 import uuid
 from datetime import datetime
-from enum import Enum as PyEnum
 from typing import Optional
 from sqlalchemy import String, Text, ForeignKey, DateTime, Enum
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 from src.models import BaseModel
+from src.schema.tickets import TicketStatus, TicketPriority
 
-
-# Перечисления для статусов и приоритетов
-class TicketStatus(PyEnum):
-    NEW = "new"
-    IN_PROGRESS = "in_progress"
-    ON_HOLD = "on_hold"
-    RESOLVED = "resolved"
-    CLOSED = "closed"
-
-class TicketPriority(PyEnum):
-    LOW = "low"
-    MEDIUM = "medium"
-    HIGH = "high"
-    CRITICAL = "critical"
 
 class Ticket(BaseModel):
     __tablename__ = "tickets"
