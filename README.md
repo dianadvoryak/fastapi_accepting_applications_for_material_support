@@ -1,1 +1,2 @@
-pip install --upgrade authx
+endpoints:
+<img src="src/img/docs.png">
